@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+* {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+}
+
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #eef2ff, #f8fafc);
+  color: #0f172a;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  gap: 12px;
+  background: white;
+  border-bottom: 1px solid #e6e9ef;
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.05);
+}
+
+.topbar h1 {
+  font-size: 30px;
+  color: #0b1220;
+  letter-spacing: -0.5px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.controls input[type="search"] {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #dbe3f0;
+  width: 220px;
+  outline: none;
+  background: #fbfdff;
+}
+
+.controls button {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  height: 40px;
+  background: #0ea5a1;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.controls button:hover {
+  transform: translateY(-1px);
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  gap: 12px;
+  padding: 12px;
+}
+
+.sidebar {
+  width: 280px;
+  background: white;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.04);
+  overflow: auto;
+}
+
+.map-wrap {
+  flex: 1;
+  min-height: 60vh;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.04);
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+}
+
+.location-list {
+  list-style: none;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.location-item {
+  padding: 8px;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #e6eef6;
+  cursor: pointer;
+  transition: transform .12s ease;
+}
+
+.location-item:hover {
+  transform: translateX(4px);
+  background: #ffffff;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer {
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+@media (max-width: 860px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    order: 2;
+  }
+
+  .map-wrap {
+    order: 1;
+    min-height: 52vh;
+  }
+
+  .controls input {
+    width: 140px;
+  }
+}
+
+.marker-bump {
+  animation: bump 450ms cubic-bezier(.08, .82, .17, 1);
+}
+
+@keyframes bump {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  40% {
+    transform: translateY(-14px) scale(1.08);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.leaflet-popup-content-wrapper img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+#searchBox {
+  width: 280px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.4;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+#searchBox:focus {
+  border-color: #0ea5a1;
+}

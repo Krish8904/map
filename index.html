@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>City Explorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>City Explorer</h1>
+    <div class="controls">
+      <input id="searchBox" type="search" placeholder="Search by name or category">
+      <button id="searchBtn">Search</button>
+      <button id="locateBtn" title="Find my location">📍 Me</button>
+    </div>
+  </header>
+  <main class="main">
+    <aside class="sidebar">
+      <h2>Filters</h2>
+      <div id="filterPanel" class="filters"></div>
+      <hr>
+      <h3>Locations</h3>
+      <ul id="placeList" class="location-list"></ul>
+    </aside>
+    <section class="map-wrap">
+      <div id="map" class="map"></div>
+    </section>
+  </main>
+  <footer class="footer">
+    <small>Built with Leaflet</small>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="map.js"></script>
+</body>
+</html>
